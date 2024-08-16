@@ -4,15 +4,17 @@ import (
 	"log"
 	"net"
 
-	"github.com/koddr/example-go-grpc-server/pkg/adder"
-	"github.com/koddr/example-go-grpc-server/pkg/api"
+	"github.com/timur-tikhomirov/example-go-grpc-server/pkg/adder"
+	"github.com/timur-tikhomirov/example-go-grpc-server/pkg/api"
 	"google.golang.org/grpc"
 )
 
 func main() {
 	// Create new gRPC server instance
 	s := grpc.NewServer()
-	srv := &adder.GRPCServer{}
+	srv := &adder.GRPCServer{
+		UnimplementedAdderServer: api.UnimplementedAdderServer{},
+	}
 
 	// Register gRPC server
 	api.RegisterAdderServer(s, srv)
