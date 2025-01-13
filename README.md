@@ -60,3 +60,5 @@ Thanks for your support! 😘
 ## License
 
 MIT
+
+P.S. Внес исправления для того, чтобы это работало в 2025 - timur-tikhomirov
